@@ -1,12 +1,13 @@
-# AgroFuturo Sustentável - Inteligência Artificial no Campo
+# AgroFuturo 2026 - Sustentabilidade & Inteligência Artificial
 
 ## Tema da Página
-A transformação digital e o papel de destaque do Brasil na inovação agrícola, destacando o equilíbrio essencial entre a alta produtividade de alimentos e a preservação do meio ambiente por meio do uso de microrganismos e Inteligência Artificial (IA).
+A convergência tecnológica entre o agronegócio de alta produtividade e a sustentabilidade ecológica, destacando o papel estratégico global do Brasil na aplicação de Inteligência Artificial e Biotecnologia em escala tropical.
 
-## Objetivo da Página
-Apresentar de forma limpa, futurista e altamente acessível os principais benefícios trazidos pelas tecnologias digitais (como otimização de recursos, automação por drones e previsibilidade climática) para produtores, investidores e entusiastas do setor, incentivando a participação em seminários educativos sobre o tema.
+## Objetivo
+Servir como um hub informativo moderno, responsivo e altamente acessível de nível Premium. O portal visa educar produtores, entusiastas e investidores acerca dos benefícios tangíveis da IA no campo (como a automação e otimização de recursos naturais), além de captar novos leads e inscrições para seminários online especializados.
 
 ## Instruções de Uso
-1. **Navegação Responsiva**: Redimensione a janela do navegador. O layout utilizará CSS Grid e Flexbox para reorganizar o formulário lateral para a base da página de forma fluida em telas mobile.
-2. **Componentes Expansíveis**: Na seção de benefícios da IA, clique sobre os títulos dos blocos para expandir e ler as explicações detalhadas (mecanismo controlado por JavaScript).
-3. **Painel de Acessibilidade**: Localize a caixa flutuante de ferramentas para alternar o contraste da tela (Modo Claro/Escuro) ou acionar o botão "Ouvir" para que o navegador execute a leitura de voz nativa e inteligente do artigo.
+1. **Instalação:** Certifique-se de salvar os três arquivos (`index.html`, `style.css`, `script.js`) no mesmo diretório local.
+2. **Imagens:** Substitua as strings `Foto1.png`, `Foto2.png` e `Foto3.png` contidas no HTML pelas suas mídias oficiais correspondentes.
+3. **Navegação Interativa:** Vá até a seção de Inteligência Artificial e clique sobre os headers dos benefícios listados para experimentar a abertura suave via JavaScript.
+4. **Painel de Acessibilidade:** Utilize os botões flutuantes no topo superior direito para modificar o tamanho dos textos de forma dinâmica, inverter cores de contraste com o Dark Mode ou iniciar a leitura nativa por sintetizador de voz (API SpeechSynthesis).
