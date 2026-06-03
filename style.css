@@ -1,282 +1,91 @@
-/* Definição de Variáveis Configuráveis para Fácil Customização */
 :root {
-    --azul-profundo: #0B192C;
-    --azul-metalico: #1E3E62;
-    --azul-celeste: #008DDA;
-    --verde-sustentavel: #41B06E;
-    --amarelo-ouro: #FFD700;
-    --branco-puro: #FFFFFF;
-    --cinza-claro: #F5F7F8;
-    --preto-tecnologico: #121212;
-
-    /* Controle de Fontes Dinâmicas com clamp() */
-    --fonte-titulo: clamp(2rem, 4vw, 3.5rem);
-    --fonte-subtitulo: clamp(1.1rem, 2vw, 1.5rem);
-    --fonte-base: clamp(1rem, 1vw + 0.5rem, 1.2rem);
+    /* Paleta de Cores Tecnológica */
+    --bg-principal: #0b110e;
+    --bg-cards: #131e19;
+    --texto-primario: #f3f4f6;
+    --texto-secundario: #9ca3af;
+    --cor-accent: #00ff87; /* Verde Neon Cyber */
+    --cor-suporte: #00d2ff; /* Azul Tech */
     
-    /* Espaçamentos e Arredondamentos */
-    --padding-padrao: 2rem;
-    --borda-raio: 16px;
-    --sombra-suave: 0 10px 30px rgba(0, 0, 0, 0.08);
-    --transicao-suave: all 0.3s ease;
-    
-    /* Estado Base de Escala de Fonte (Acessibilidade) */
-    --fator-escala: 1;
+    /* Configurações Globais Facilmente Customizáveis */
+    --font-titulos: 'Segoe UI', system-ui, sans-serif;
+    --font-corpo: 'Segoe UI', system-ui, sans-serif;
+    --paddings-padrao: clamp(1rem, 5vw, 3rem);
+    --border-radius: 12px;
+    --shadow-suave: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --transition-suave: all 0.3s ease;
 }
 
-/* Configurações Globais Reset */
+/* Reset e Estilos Fluidos */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: calc(var(--fonte-base) * var(--fator-escala));
+    background-color: var(--bg-principal);
+    color: var(--texto-primario);
+    font-family: var(--font-corpo);
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.25rem); /* Fonte Fluida */
     line-height: 1.6;
-    background-color: var(--cinza-claro);
-    color: var(--azul-profundo);
-    transition: var(--transicao-suave);
 }
 
-/* Classes Modificadoras para Modo Escuro */
-body.dark-mode {
-    background-color: var(--preto-tecnologico);
-    color: var(--cinza-claro);
-}
-body.dark-mode .card-inscricao, 
-body.dark-mode .accordion-header,
-body.dark-mode .comentarios-section {
-    background-color: #1E1E1E;
-    color: var(--branco-puro);
-    border-color: #333;
-}
-
-/* Caixa Flutuante de Acessibilidade */
-.acessibilidade-container {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    z-index: 1000;
-    background: var(--azul-profundo);
-    padding: 0.5rem;
-    border-radius: var(--borda-raio);
-    display: flex;
-    gap: 0.5rem;
-    box-shadow: var(--sombra-suave);
-}
-.acessibilidade-container button {
-    background: var(--azul-metalico);
-    color: var(--branco-puro);
-    border: none;
-    padding: 0.6rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: var(--transicao-suave);
-}
-.acessibilidade-container button:hover {
-    background: var(--azul-celeste);
-    transform: translateY(-2px);
-}
-
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, rgba(11,25,44,0.9) 0%, rgba(30,62,98,0.8) 100%);
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: var(--padding-padrao);
-    color: var(--branco-puro);
-}
-.hero-conteudo h1 {
-    font-size: var(--fonte-titulo);
-    color: var(--amarelo-ouro);
-    margin-bottom: 1rem;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-.hero-conteudo p {
-    font-size: var(--fonte-subtitulo);
-    max-width: 800px;
-    margin: 0 auto 2rem auto;
-}
-.btn-action {
-    display: inline-block;
-    background-color: var(--verde-sustentavel);
-    color: var(--branco-puro);
-    padding: 1rem 2.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: var(--borda-raio);
-    transition: var(--transicao-suave);
-    box-shadow: 0 4px 15px rgba(65, 176, 110, 0.4);
-}
-.btn-action:hover {
-    background-color: #359459;
-    transform: scale(1.05);
-}
-
-/* Container do Layout Responsivo (Grid de 320px até 2560px) */
-.layout-container {
-    max-width: 1600px;
-    margin: 3rem auto;
-    padding: 0 var(--padding-padrao);
+/* Exemplo de Layout Responsivo com CSS Grid */
+.hero-grid, .artigo-grid {
     display: grid;
-    grid-template-columns: minmax(300px, 2fr) minmax(280px, 1fr);
-    gap: 3rem;
-    align-items: start;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: var(--paddings-padrao);
 }
 
-/* Estilização das Imagens de Acordo com Especificações Premium */
+/* Estilização Premium para Imagens */
 .imagem {
-    width: 100%;
-    margin: 2rem 0;
     overflow: hidden;
-    border-radius: var(--borda-raio);
-    box-shadow: var(--sombra-suave);
-    transition: var(--transicao-suave);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-suave);
+    transition: var(--transition-suave);
 }
+
 .imagem img {
     width: 100%;
     height: auto;
     display: block;
-    object-fit: cover;
-    transition: var(--transicao-suave);
-}
-.imagem:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-}
-.imagem:hover img {
-    scale: 1.02;
+    transition: var(--transition-suave);
 }
 
-/* Componente Accordion Interativo */
-.accordion-container {
-    margin: 3rem 0;
+/* Efeito Hover nas Imagens */
+.imagem:hover img {
+    transform: scale(1.05);
+    filter: brightness(1.1);
 }
-.accordion-item {
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-}
-.accordion-header {
-    width: 100%;
-    background-color: var(--branco-puro);
-    color: var(--azul-profundo);
-    text-align: left;
-    padding: 1.2rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    border: 1px solid rgba(0,0,0,0.05);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: var(--transicao-suave);
-}
-.accordion-header:hover {
-    background-color: #eef5f9;
-    color: var(--azul-celeste);
-}
+
+/* Accordion Moderno (Oculto por padrão) */
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    background-color: var(--branco-puro);
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
-}
-.accordion-content p {
-    padding: 0 1.5rem 1.5rem 1.5rem;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
 }
 
-/* Formulários Modernos (Barra Lateral e Comentários) */
-.barra-lateral {
-    position: sticky;
-    top: 100px;
+.accordion-item.active .accordion-content {
+    max-height: 1000px;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
 }
-.card-inscricao, .comentarios-section {
-    background-color: var(--branco-puro);
-    padding: var(--padding-padrao);
-    border-radius: var(--borda-raio);
-    box-shadow: var(--sombra-suave);
-    border-top: 5px solid var(--azul-celeste);
-}
-.form-moderno .campo-grupo {
-    margin-bottom: 1.2rem;
+
+/* Caixa Flutuante de Acessibilidade Fixa no Canto Inferior Direito */
+.acessibilidade-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(19, 30, 25, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--cor-accent);
+    display: flex
+    /* Localize ou crie o seletor .main-content */
+.main-content {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-.form-moderno label {
-    font-weight: 600;
-}
-.form-moderno input, .form-moderno textarea {
-    padding: 0.8rem;
-    border: 2px solid #E5E7EB;
-    border-radius: 8px;
-    outline: none;
-    font-size: 1rem;
-    transition: var(--transicao-suave);
-}
-.form-moderno input:focus, .form-moderno textarea:focus {
-    border-color: var(--azul-celeste);
-    box-shadow: 0 0 0 3px rgba(0, 141, 218, 0.2);
-}
-.btn-submit {
-    width: 100%;
-    background-color: var(--azul-profundo);
-    color: var(--branco-puro);
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: var(--transicao-suave);
-}
-.btn-submit:hover {
-    background-color: var(--azul-celeste);
-}
-
-/* Rodapé */
-.rodape-container {
-    background-color: var(--azul-profundo);
-    color: var(--branco-puro);
-    padding: 3rem var(--padding-padrao);
-    text-align: center;
-    margin-top: 5rem;
-}
-.frase-impacto {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: var(--amarelo-ouro);
-}
-.referencias a {
-    color: var(--azul-celeste);
-    text-decoration: none;
-}
-.referencias a:hover {
-    text-decoration: underline;
-}
-
-/* Responsividade Avançada com Media Queries */
-@media (max-width: 1024px) {
-    .layout-container {
-        grid-template-columns: 1fr;
-    }
-    .barra-lateral {
-        position: relative;
-        top: 0;
-    }
-}
-@media (max-width: 480px) {
-    .acessibilidade-container {
-        position: static;
-        width: 100%;
-        justify-content: center;
-        border-radius: 0;
-    }
-}
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh; /*
