@@ -1,0 +1,463 @@
+/* ==========================================================================
+   VARIÁVEIS GERAIS (Configuração de Cores, Fontes e Espaçamentos Premium)
+   ========================================================================== */
+:root {
+    --bg-principal: #0a1108;
+    --bg-cards: #121f10;
+    --bg-inputs: #1b2e18;
+    --cor-neon-tech: #00ff66;
+    --cor-neon-suave: #00cc52;
+    --cor-texto-primario: #f3f4f6;
+    --cor-texto-secundario: #9ca3af;
+    --fonte-titulo: 'Orbitron', sans-serif;
+    --fonte-subtitulo: 'Rajdhani', sans-serif;
+    --fonte-corpo: 'Roboto', sans-serif;
+    
+    /* Variáveis customizáveis via clamp() para responsividade fluida */
+    --tamanho-h1: clamp(2.2rem, 5vw, 4rem);
+    --tamanho-h2: clamp(1.8rem, 4vw, 2.8rem);
+    --padding-secao: clamp(2rem, 6vw, 5rem);
+    --raio-borda: 12px;
+    --sombra-suave: 0 8px 32px 0 rgba(0, 255, 102, 0.05);
+    --sombra-neon: 0 0 15px rgba(0, 255, 102, 0.3);
+    --transicao-suave: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --fator-fonte: 1;
+}
+
+/* Modificadores Globais de Acessibilidade */
+body.modo-claro {
+    --bg-principal: #f4f7f4;
+    --bg-cards: #ffffff;
+    --bg-inputs: #e8f0e8;
+    --cor-neon-tech: #008833;
+    --cor-neon-suave: #006622;
+    --cor-texto-primario: #111827;
+    --cor-texto-secundario: #4b5563;
+    --sombra-suave: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+}
+
+/* Reset Técnico Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: calc(16px * var(--fator-fonte));
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--cor-texto-primario);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+    transition: var(--transicao-suave);
+    overflow-x: hidden;
+}
+
+/* Layout System com CSS Grid Fluido */
+.grid-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ==========================================================================
+   CAIXA FLUTUANTE DE ACESSIBILIDADE
+   ========================================================================== */
+.acessibilidade-container {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    background: var(--bg-cards);
+    border: 1px solid var(--cor-neon-tech);
+    padding: 0.5rem;
+    border-radius: var(--raio-borda);
+    display: flex;
+    gap: 0.5rem;
+    box-shadow: var(--sombra-suave);
+}
+
+.acessibilidade-container button {
+    background: var(--bg-inputs);
+    border: 1px solid transparent;
+    color: var(--cor-texto-primario);
+    padding: 0.5rem 0.8rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: var(--transicao-suave);
+}
+
+.acessibilidade-container button:hover {
+    border-color: var(--cor-neon-tech);
+    box-shadow: var(--sombra-neon);
+}
+
+/* ==========================================================================
+   HERO SECTION & FORMULÁRIO (Layout Split com Grid Adaptativo)
+   ========================================================================== */
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    padding: calc(var(--padding-secao) * 2) 0 var(--padding-secao);
+    display: flex;
+    align-items: center;
+    background: radial-gradient(circle at 20% 30%, #163013 0%, var(--bg-principal) 70%);
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-tag {
+    color: var(--cor-neon-tech);
+    font-family: var(--fonte-subtitulo);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+.hero-text h1 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-h1);
+    line-height: 1.1;
+    margin: 1rem 0;
+    text-shadow: 0 0 20px rgba(0, 255, 102, 0.2);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 2rem;
+}
+
+.btn-principal {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    border: 2px solid var(--cor-neon-tech);
+    color: var(--cor-neon-tech);
+    font-family: var(--fonte-titulo);
+    text-decoration: none;
+    border-radius: var(--raio-borda);
+    transition: var(--transicao-suave);
+}
+
+.btn-principal:hover {
+    background: var(--cor-neon-tech);
+    color: #000;
+    box-shadow: var(--sombra-neon);
+}
+
+/* Formulário de Inscrição Estilo Premium Cyber-Agro */
+.form-inscricao-container {
+    background: var(--bg-cards);
+    padding: 2.5rem;
+    border-radius: var(--raio-borda);
+    border-left: 4px solid var(--cor-neon-tech);
+    box-shadow: var(--sombra-suave);
+}
+
+.form-inscricao-container h3 {
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-inscricao-container p {
+    color: var(--cor-texto-secundario);
+    margin-bottom: 1.5rem;
+}
+
+.grupo-campo {
+    margin-bottom: 1.2rem;
+}
+
+.grupo-campo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario);
+}
+
+.grupo-campo input, .secao-comentarios textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: var(--bg-inputs);
+    border: 1px solid transparent;
+    border-radius: 6px;
+    color: var(--cor-texto-primario);
+    transition: var(--transicao-suave);
+}
+
+.grupo-campo input:focus, .secao-comentarios textarea:focus {
+    outline: none;
+    border-color: var(--cor-neon-tech);
+    box-shadow: var(--sombra-neon);
+}
+
+.grid-form-3col {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 0.8rem;
+}
+
+.btn-formulario {
+    width: 100%;
+    padding: 1rem;
+    background: var(--cor-neon-tech);
+    color: #000;
+    border: none;
+    font-family: var(--fonte-titulo);
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: var(--transicao-suave);
+}
+
+.btn-formulario:hover {
+    background: var(--cor-neon-suave);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   CONTEÚDO E IMAGENS (Visual e Efeitos Hover Premium)
+   ========================================================================== */
+main {
+    padding: var(--padding-secao) 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--padding-secao);
+}
+
+.artigo-principal {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.artigo-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-h2);
+    margin-bottom: 1rem;
+}
+
+.linha-fina {
+    font-size: 1.2rem;
+    color: var(--cor-neon-tech);
+    margin-bottom: 2.5rem;
+}
+
+.artigo-corpo p {
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto-secundario);
+}
+
+/* Estrutura Padronizada de Imagens com Efeito Hover Suave */
+.imagem {
+    width: 100%;
+    margin: 2.5rem 0;
+    border-radius: var(--raio-borda);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+.imagem img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.imagem:hover img {
+    transform: scale(1.04);
+}
+
+blockquote {
+    border-left: 3px dashed var(--cor-neon-tech);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--cor-texto-primario);
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   SEÇÃO DE BENEFÍCIOS (Estrutura Accordion Funcional)
+   ========================================================================== */
+.secao-beneficios {
+    background: linear-gradient(180deg, transparent, var(--bg-cards));
+    padding: var(--padding-secao) 2rem;
+    border-radius: var(--raio-borda);
+}
+
+.beneficios-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+}
+
+.beneficios-header h2 {
+    font-family: var(--fonte-titulo);
+    font-size: var(--tamanho-h2);
+    margin-bottom: 1rem;
+}
+
+.accordion-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid rgba(0, 255, 102, 0.1);
+    margin-bottom: 0.5rem;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: transparent;
+    border: none;
+    color: var(--cor-texto-primario);
+    font-family: var(--fonte-subtitulo);
+    font-size: 1.4rem;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transicao-suave);
+}
+
+.accordion-header:hover {
+    color: var(--cor-neon-tech);
+    background: rgba(0, 255, 102, 0.02);
+}
+
+.icone-status {
+    color: var(--cor-neon-tech);
+    font-weight: bold;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0, 1, 0, 1);
+    padding: 0 1.5rem;
+}
+
+.accordion-item.ativo .accordion-content {
+    max-height: 2000px; /* Valor seguro para expansão fluida via JS */
+    padding: 0 1.5rem 1.5rem;
+    transition: max-height 0.4s cubic-bezier(1, 0, 1, 0);
+}
+
+/* ==========================================================================
+   ÁREA DE COMENTÁRIOS E RODAPÉ
+   ========================================================================== */
+.secao-comentarios {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.secao-comentarios textarea {
+    resize: vertical;
+    margin: 1rem 0;
+}
+
+.btn-comentario {
+    padding: 0.8rem 2rem;
+    background: transparent;
+    border: 1px solid var(--cor-neon-tech);
+    color: var(--cor-neon-tech);
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transicao-suave);
+}
+
+.btn-comentario:hover {
+    background: rgba(0, 255, 102, 0.1);
+}
+
+.lista-comentarios-container {
+    margin-top: 2rem;
+}
+
+.card-comentario {
+    background: var(--bg-cards);
+    padding: 1.2rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border-left: 2px solid var(--cor-neon-suave);
+    animation: fade_in 0.5s ease-out;
+}
+
+@keyframes fade_in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.rodape-futurista {
+    background: #050804;
+    padding: 3rem 0;
+    margin-top: var(--padding-secao);
+    border-top: 1px solid rgba(0, 255, 102, 0.1);
+}
+
+.rodape-conteudo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.rodape-frase {
+    flex: 1;
+    min-width: 280px;
+}
+
+.rodape-referencias {
+    flex: 1;
+    min-width: 280px;
+}
+
+.rodape-referencias ul {
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.rodape-referencias a {
+    color: var(--cor-texto-secundario);
+    text-decoration: none;
+    transition: var(--transicao-suave);
+}
+
+.rodape-referencias a:hover {
+    color: var(--cor-neon-tech);
+}
+
+/* Responsive Ajustes Finos (Mobile / Tablet) */
+@media (max-width: 768px) {
+    .grid-form-3col {
+        grid-template-columns: 1fr;
+    }
+    .acessibilidade-container {
+        top: auto;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
